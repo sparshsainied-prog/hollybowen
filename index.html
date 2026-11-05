@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Holly Bowen | Between Wind and Stone</title>
+<meta name="description" content="A homepage idea for Holly Bowen, author of By the Moon and Between Wind and Stone.">
+<meta property="og:title" content="Holly Bowen | Between Wind and Stone">
+<meta property="og:description" content="A homepage idea made by Sparsh Saini for Holly Bowen. Not her official site.">
+<meta property="og:image" content="https://sparshsainied-prog.github.io/hollybowen/img/og.jpg">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almendra:wght@400;700&family=Alegreya:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* Palette from the Between Wind and Stone cover: gold field, fuchsia vine, Feyla's plum robe, leaf olive */
+:root{
+  --gold:#E6A548; --wheat:#F3D9A4; --vine:#D9558F; --plum:#3E1A3A; --plum-2:#55264F;
+  --ink:#2B1228; --leaf:#7C7A2E; --paper:#F7E6BF;
+  --display:"Almendra", Georgia, serif; --text:"Alegreya", Georgia, serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--plum);color:var(--paper);font:400 1.125rem/1.6 var(--text)}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--wheat);outline-offset:2px;box-shadow:0 0 0 5px var(--ink)}
+.skip{position:absolute;left:-999px;top:0}
+.skip:focus{left:8px;top:8px;background:var(--paper);color:var(--ink);padding:.4rem .8rem;z-index:5}
+.strip{background:var(--ink);color:var(--wheat);font-size:.85rem;text-align:center;padding:.5rem 1rem}
+
+/* Hero */
+.hero{position:relative;height:340vh;background:var(--plum)}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:grid;grid-template-columns:1fr minmax(0,46vh) 1fr;align-items:center;column-gap:4vw;padding:0 5vw}
+.book{grid-column:2;position:relative;overflow:hidden;aspect-ratio:616/934;width:100%;transform-origin:49% 68%;will-change:transform;box-shadow:0 30px 60px -20px rgba(20,5,18,.7)}
+.book img{position:absolute;inset:0;width:100%;height:100%}
+.book .vl,.book .vr{will-change:transform,opacity;opacity:0}
+.book .vl{transform-origin:0 50%}
+.book .vr{transform-origin:100% 50%}
+.book .plate,.book .full{opacity:0}
+.orb{position:absolute;left:49%;top:68%;width:30%;aspect-ratio:1;margin:-15% 0 0 -15%;border-radius:50%;background:radial-gradient(circle,rgba(255,236,170,.95) 0,rgba(255,214,120,.45) 35%,rgba(255,214,120,0) 70%);opacity:.9}
+.words{grid-column:1;max-width:24rem;justify-self:end;opacity:0;will-change:transform,opacity}
+.words h1{font:700 clamp(2.4rem,4.6vw,4rem)/1.02 var(--display);color:var(--wheat);margin:0 0 1rem}
+.words p{margin:0 0 1.25rem}
+.words .line{font-style:italic;font-size:1.3rem;color:var(--paper)}
+.side{grid-column:3;max-width:17rem;opacity:0;will-change:opacity}
+.side p{margin:0 0 1rem;font-size:1rem}
+.btn{display:inline-block;font:700 1.05rem/1 var(--display);color:var(--ink);background:var(--wheat);padding:.85rem 1.2rem;border-radius:2px 14px 2px 14px;border:2px solid var(--vine);text-decoration:none;min-height:44px}
+.btn.alt{background:transparent;color:var(--wheat)}
+.btn:hover{background:var(--ink);color:var(--wheat);border-color:var(--vine)}
+
+/* Calm sections */
+section.band{padding:clamp(4rem,9vw,7rem) 6vw}
+.wrap{max-width:68rem;margin:0 auto}
+h2{font:700 clamp(2rem,4vw,3rem)/1.05 var(--display);margin:0 0 1rem;color:var(--wheat)}
+.b2{background:var(--gold);color:var(--ink)}
+.b2 h2{color:var(--plum)}
+.b2 .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;align-items:start}
+.b2 blockquote{margin:1.5rem 0;font:400 1.6rem/1.25 var(--display);color:var(--plum)}
+.buy{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.5rem}
+.b2 .btn{background:var(--plum);color:var(--wheat);border-color:var(--plum)}
+.b2 .btn.alt{background:transparent;color:var(--plum)}
+.b2 .btn:hover{background:var(--ink);border-color:var(--ink);color:var(--wheat)}
+.praise{font-size:1rem;border-top:1px solid rgba(62,26,58,.35);padding-top:1rem}
+.b1 .wrap{display:grid;grid-template-columns:minmax(0,18rem) 1fr;gap:4rem;align-items:center}
+.b1 img{box-shadow:0 24px 50px -20px rgba(0,0,0,.6)}
+.signed{background:var(--wheat);color:var(--ink)}
+.signed .wrap{max-width:44rem}
+.signed h2{color:var(--plum)}
+.signed .price{font:700 2.6rem/1 var(--display);color:#8E2453;margin:.5rem 0 1rem}
+.signed .btn{background:var(--plum);color:var(--wheat);border-color:var(--plum)}
+.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.about blockquote{font:400 1.45rem/1.3 var(--display);margin:1.5rem 0 .4rem;color:var(--wheat)}
+.about cite{font-size:.95rem;font-style:normal;opacity:.85}
+.close{background:var(--ink);text-align:left}
+.close p{max-width:34rem}
+@media (max-height:520px){.words .line{display:none}.book{width:min(40vw,52vh)}.words h1{font-size:1.6rem}}
+footer{background:var(--ink);color:var(--wheat);font-size:.85rem;padding:1.5rem 6vw 2rem;border-top:1px solid rgba(243,217,164,.2)}
+
+@media (max-width:820px){
+  .hero{height:300vh}
+  .stage{grid-template-columns:1fr;grid-template-rows:auto auto;align-content:center;row-gap:1.4rem;padding:0 6vw}
+  .book{grid-column:1;grid-row:1;width:min(62vw,40vh);justify-self:center}
+  .words{grid-column:1;grid-row:2;justify-self:center;text-align:center;max-width:22rem}
+  .words h1{font-size:2.1rem;margin-bottom:.5rem}
+  .words .line{font-size:1.05rem;margin-bottom:.8rem}
+  .side{display:none}
+  .b2 .wrap,.b1 .wrap,.about .wrap{grid-template-columns:1fr;gap:2rem}
+  .b1 img{max-width:15rem}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#book-two">Skip to the books</a>
+<div class="strip">A homepage idea made by Sparsh Saini for Holly Bowen. Not their official site.</div>
+
+<header class="hero" id="hero">
+  <div class="stage">
+    <div class="words">
+      <h1>Between Wind and Stone</h1>
+      <p class="line">Desperate to break the curse and let Anguard grow again, Feyla will try anything.</p>
+      <a class="btn" href="https://hollybowen.com/b/paperbackbwas">Signed paperback</a>
+    </div>
+    <div class="book" role="img" aria-label="The cover of Between Wind and Stone by Holly Bowen: Feyla holds a glowing light in a golden field below a castle, framed by pink fuchsia vines.">
+      <img class="stone" src="img/stone.jpg" alt="" width="616" height="934" fetchpriority="high">
+      <img class="plate" src="img/plate.jpg" alt="" width="616" height="934">
+      <img class="vl" src="img/vines-l.webp" alt="" width="616" height="934">
+      <img class="vr" src="img/vines-r.webp" alt="" width="616" height="934">
+      <img class="full" src="img/cover.jpg" alt="" width="616" height="934">
+      <div class="orb"></div>
+    </div>
+    <div class="side">
+      <p>Book two of the trilogy that began with By the Moon.</p>
+      <a class="btn alt" href="#book-one">Start with book one</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="band b2" id="book-two">
+  <div class="wrap">
+    <div>
+      <h2>Book two</h2>
+      <p>Feyla is nearly seventeen. She survived the road to Anguard, and now she has friends at the Academy. But the city is cursed, and nothing there will grow.</p>
+      <blockquote>“The magic she hated most was needed here.”</blockquote>
+      <div class="buy">
+        <a class="btn" href="https://hollybowen.com/b/paperbackbwas">Signed paperback, NZ$34</a>
+        <a class="btn alt" href="https://www.amazon.com/dp/B0GS4RF8QB">Amazon</a>
+      </div>
+    </div>
+    <div class="praise">
+      <p>“Absolutely amazing!! If you think book two can't be as good as book one then you're in for a treat.”</p>
+      <p>“I didn't want it to end”</p>
+      <p>Early readers, quoted on hollybowen.com</p>
+    </div>
+  </div>
+</section>
+
+<section class="band b1" id="book-one">
+  <div class="wrap">
+    <img src="img/by-the-moon.jpg" alt="The cover of By the Moon by Holly Bowen: red lilies on a night-blue ground with a crescent moon." width="639" height="1000" loading="lazy">
+    <div>
+      <h2>By the Moon</h2>
+      <p>Book one, out since 22 April 2025. Feyla's story starts here.</p>
+      <p>“Super engaging and intriguing magical quest!” <span style="opacity:.8">Pinky3f, Amazon</span></p>
+      <div class="buy">
+        <a class="btn" href="https://hollybowen.com/b/paperbackbythemoon">Signed paperback, NZ$32</a>
+        <a class="btn alt" href="https://www.amazon.com/Moon-Holly-Bowen-ebook/dp/B0F1S85VXY">Kindle</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band signed">
+  <div class="wrap">
+    <h2>Both books, signed</h2>
+    <p class="price">NZ$62</p>
+    <p>By the Moon and Between Wind and Stone, signed by Holly and posted free anywhere in New Zealand. In Taupō you'll also find them at Paper Plus.</p>
+    <a class="btn" href="https://hollybowen.com/b/paperbackbundle">Get the signed set</a>
+  </div>
+</section>
+
+<section class="band about">
+  <div class="wrap">
+    <img src="img/holly.jpg" alt="Holly Bowen among green palm leaves, looking up and smiling." width="900" height="600" loading="lazy">
+    <div>
+      <h2>Holly</h2>
+      <p>Holly writes in Taupō. She teaches yoga, works part-time in marketing at Taupō Tandem Skydive and is raising two boys. The best thing readers tell her is that her books feel like the fantasy you grew up on.</p>
+      <blockquote>“I always wanted to be a writer. I was one of those kids with my head in a book all the time.”</blockquote>
+      <cite>Holly, to Taupō News</cite>
+    </div>
+  </div>
+</section>
+
+<section class="band close">
+  <div class="wrap">
+    <h2>Book three is coming</h2>
+    <p>Feyla's story ends in the third book, which Holly is writing now. Find her on Instagram at <a href="https://instagram.com/hollybowenauthor">@hollybowenauthor</a>.</p>
+  </div>
+</section>
+</main>
+
+<footer>A mockup made by Sparsh Saini for Holly Bowen. Not affiliated, not live.</footer>
+
+<script>
+(function(){
+  var hero=document.getElementById('hero'), book=hero.querySelector('.book');
+  var q=function(s){return hero.querySelector(s)};
+  var plate=q('.plate'), vl=q('.vl'), vr=q('.vr'), full=q('.full'), orb=q('.orb'), words=q('.words'), side=q('.side');
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var clamp=function(v){return v<0?0:v>1?1:v}, seg=function(p,a,b){return clamp((p-a)/(b-a))};
+  var ease=function(t){return 1-Math.pow(1-t,3)};
+  var top=0, span=1, ticking=false;
+  function measure(){ top=hero.offsetTop; span=hero.offsetHeight-innerHeight; }
+  function draw(p){
+    var cam=ease(seg(p,0,.75)), s=2.6-1.6*cam;
+    book.style.transform='scale('+s.toFixed(4)+')';
+    plate.style.opacity=(seg(p,.15,.6)).toFixed(3);
+    var a=ease(seg(p,.12,.55)), b=ease(seg(p,.24,.68));
+    vl.style.opacity=Math.min(1,a*1.6).toFixed(3);
+    vl.style.transform='translateX('+(-38*(1-a)).toFixed(2)+'%) scale('+(.55+.45*a).toFixed(4)+')';
+    vr.style.opacity=Math.min(1,b*1.6).toFixed(3);
+    vr.style.transform='translateX('+(38*(1-b)).toFixed(2)+'%) scale('+(.55+.45*b).toFixed(4)+')';
+    full.style.opacity=seg(p,.68,.82).toFixed(3);
+    orb.style.opacity=(.9-.9*seg(p,.6,.85)).toFixed(3);
+    var w=seg(p,.74,.92);
+    words.style.opacity=w.toFixed(3);
+    words.style.transform='translateY('+(16*(1-w)).toFixed(1)+'px)';
+    side.style.opacity=seg(p,.8,.95).toFixed(3);
+  }
+  function frame(){ ticking=false; draw(clamp((scrollY-top)/span)); }
+  hero.addEventListener('focusin',function(){ if(scrollY<top+span) scrollTo(0,top+span); });
+  measure();
+  if(reduce){ draw(1); return; }
+  frame();
+  addEventListener('scroll',function(){ if(!ticking){ticking=true;requestAnimationFrame(frame);} },{passive:true});
+  addEventListener('resize',function(){ measure(); frame(); });
+})();
+</script>
+</body>
+</html>
